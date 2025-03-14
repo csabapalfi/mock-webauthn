@@ -1,0 +1,25 @@
+{
+  "name": "mock-webauthn",
+  "version": "0.1.2",
+  "description": "Mock WebAuthn authenticator for node.js",
+  "type": "module",
+  "browser": "browser/index.js",
+  "module": "index.js",
+  "scripts": {
+    "build": "npx esbuild index.js --bundle --format=esm --minify --outdir=browser --sourcemap",
+    "test": "node --no-warnings --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "coverage": "node --no-warnings --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@simplewebauthn/server": "^13.1.1",
+    "esbuild": "0.25.1",
+    "jest": "^29.7.0",
+    "source-map-explorer": "^2.5.3"
+  },
+  "dependencies": {
+    "@hexagon/base64": "^2.0.4",
+    "@levischuck/tiny-cbor": "^0.2.11",
+    "uint8arrays": "^5.1.0"
+  }
+}
