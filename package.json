@@ -7,13 +7,13 @@
   "module": "index.js",
   "scripts": {
     "build": "npx esbuild index.js --bundle --format=esm --minify --outdir=browser --sourcemap",
-    "test": "node --no-warnings --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
+    "test": "c8 ava"
   },
   "devDependencies": {
-    "@jest/globals": "^29.7.0",
     "@simplewebauthn/server": "^13.1.1",
+    "ava": "^6.1.1",
+    "c8": "^9.1.0",
     "esbuild": "0.25.1",
-    "jest": "^29.7.0",
     "source-map-explorer": "^2.5.3"
   },
   "dependencies": {
@@ -21,12 +21,14 @@
     "@levischuck/tiny-cbor": "^0.2.11",
     "uint8arrays": "^5.1.0"
   },
-  "jest": {
-    "transform": {},
-    "extensionsToTreatAsEsm": [],
-    "moduleNameMapper": {
-      "^(\\.{1,2}/.*)\\.js$": "$1.js"
-    },
-    "testEnvironment": "node"
+  "ava": {
+    "nodeArguments": ["--no-warnings"],
+    "files": ["**/*.test.js"]
+  },
+  "c8": {
+    "reporter": ["text", "lcov", "html"],
+    "all": true,
+    "include": ["index.js"],
+    "exclude": ["**/*.test.js"]
   }
 }
