@@ -35,9 +35,6 @@ You can emulate a WebAuthn authenticator using Chrome:
 - [Chrome DevTools - Webauthn](https://developer.chrome.com/docs/devtools/webauthn)
 - [Chrome DevTools Protocol - Webauthn (experimental)](https://chromedevtools.github.io/devtools-protocol/tot/WebAuthn/) (for automated tests)
 
-### webauthn-mock (golang)
+### virtual-webauthn (golang)
 
-[webauthn-mock](https://github.com/get-smooth/webauthn-mock) is a golang library for the same/similar purpose.
-
-- it only seems to support the attestion flow
-- it had no new commits since May 2024.
+[virtual-webauthn](https://github.com/descope/virtualwebauthn) is a golang library for the same/similar purpose but more complete than this library.
